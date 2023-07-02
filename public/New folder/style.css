@@ -1,0 +1,371 @@
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+    /**
+     * colors
+     */
+  
+    --raisin-black-1: hsl(234, 14%, 14%);
+    --raisin-black-2: hsl(231, 12%, 12%);
+    --raisin-black-3: hsl(228, 12%, 17%);
+    --eerie-black: hsl(240, 11%, 9%);
+    --light-gray: hsl(0, 0%, 80%);
+    --platinum: hsl(0, 4%, 91%);
+    --xiketic: hsl(275, 24%, 10%);
+    --orange: hsl(31, 100%, 51%);
+    --white: hsl(0, 0%, 100%);
+    --onyx: hsl(240, 5%, 26%);
+  
+    /**
+     * typography
+     */
+  
+    --ff-refault: "Refault", Georgia;
+    --ff-oswald: 'Oswald', sans-serif;
+    --ff-poppins: 'Poppins', sans-serif;
+  
+    --fs-1: 54px;
+    --fs-2: 34px;
+    --fs-3: 30px;
+    --fs-4: 26px;
+    --fs-5: 22px;
+    --fs-6: 20px;
+    --fs-7: 18px;
+    --fs-8: 15px;
+    --fs-9: 14px;
+    --fs-10: 13px;
+    --fs-11: 12px;
+  
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+  
+    /**
+     * transition
+     */
+  
+    --transition-1: 0.15s ease-in-out;
+    --transition-2: 0.15s ease-in;
+    --transition-3: 0.25s ease-out;
+  
+    /**
+     * spacing
+     */
+  
+    --section-padding: 60px;
+  
+    /**
+     * clip path
+     */
+  
+    --polygon-1: polygon(90% 0, 100% 34%, 100% 100%, 10% 100%, 0 66%, 0 0);
+    --polygon-2: polygon(0 0, 100% 0%, 82% 100%, 0% 100%);
+    --polygon-3: polygon(0 0, 100% 0%, 100% 100%, 18% 100%);
+    --polygon-4: polygon(96% 0, 100% 36%, 100% 100%, 4% 100%, 0 66%, 0 0);
+  
+  }
+  
+  
+  
+  
+  
+  /*-----------------------------------*\
+    #RESET
+  \*-----------------------------------*/
+  
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a { text-decoration: none; }
+  
+  li { list-style: none; }
+  
+  a,
+  img,
+  span,
+  input,
+  button,
+  ion-icon { display: block; }
+  
+  button {
+    font: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input {
+    font: inherit;
+    width: 100%;
+    border: none;
+  }
+  
+  html {
+    font-family: var(--ff-poppins);
+    scroll-behavior: smooth;
+  }
+  
+  body { overflow-x: hidden; }
+  
+  body.active { overflow-y: hidden; }
+  
+  ::-webkit-scrollbar { width: 8px; }
+  
+  ::-webkit-scrollbar-track { background: var(--raisin-black-2); }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--orange);
+    border-radius: 10px;
+  }
+  
+  
+  
+  
+  
+  /*-----------------------------------*\
+    #CUSTOM FONT
+  \*-----------------------------------*/
+  
+  /* Webfont: Refault-Italic */
+  @font-face {
+      font-family: 'Refault';
+      src: url('../fonts/REFAULT.eot'); /* IE9 Compat Modes */
+      src: url('../fonts/REFAULT.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+           url('../fonts/REFAULT.woff') format('woff'), /* Modern Browsers */
+           url('../fonts/REFAULT.woff2') format('woff2'), /* Modern Browsers */
+           url('../fonts/REFAULT.ttf') format('truetype'); /* Safari, Android, iOS */
+      font-style: italic;
+      font-weight: normal;
+      text-rendering: optimizeLegibility;
+  }
+  
+  
+  
+  
+  
+  /*-----------------------------------*\
+    #REUSED STYLE
+  \*-----------------------------------*/
+  
+  .container { padding-inline: 15px; }
+  
+  .h1 {
+    color: var(--white);
+    font-family: var(--ff-refault);
+    font-size: var(--fs-1);
+    font-weight: var(--fw-400);
+    text-transform: uppercase;
+  }
+  
+  .h2 {
+    font-size: var(--fs-2);
+    color: var(--white);
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: var(--ff-oswald);
+  }
+  
+  .h3 {
+    font-family: var(--ff-oswald);
+    font-size: var(--fs-2);
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  
+  .btn {
+    color: var(--white);
+    font-family: var(--ff-oswald);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-500);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 34px;
+    clip-path: var(--polygon-1);
+    transition: var(--transition-1);
+  }
+  
+  .btn-primary { background: var(--orange); }
+  
+  .btn-primary:is(:hover, :focus) { background: var(--raisin-black-1); }
+  
+  .btn-secondary {
+    background: var(--white);
+    color: var(--orange);
+  }
+  
+  .btn-secondary:is(:hover, :focus) {
+    background: var(--raisin-black-1);
+    color: var(--white);
+  }
+  
+  .btn-link:is(:hover, :focus) { color: var(--orange); }
+  
+  .has-scrollbar::-webkit-scrollbar { height: 6px; }
+  
+  .has-scrollbar::-webkit-scrollbar-button { width: 40px; }
+  
+  .section-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  
+  .section-title::before,
+  .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 5px;
+    width: 120px;
+    background: var(--orange);
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .section-title::before {
+    bottom: -23px;
+    height: 4px;
+    width: 30px;
+  }
+  
+/*-----------------------------------*\
+  #GEARS
+\*-----------------------------------*/
+
+.gears { padding: var(--section-padding) 0; }
+
+.gears-list {
+  display: grid;
+  gap: 50px;
+}
+
+.gears-card .card-banner {
+  position: relative;
+  background: url("../images/gears-card-bg.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  aspect-ratio: 2 / 1.7;
+  display: grid;
+  place-items: center;
+  margin-bottom: 30px;
+}
+
+.gears .card-banner a { width: 100%; }
+
+.gears .card-banner img {
+  width: 45%;
+  margin-inline: auto;
+}
+
+.share,
+.card-time-wrapper {
+  position: absolute;
+  color: var(--orange);
+}
+
+.share {
+  top: 25%;
+  right: 8%;
+  font-size: 20px;
+  border: 2px solid var(--onyx);
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transition: var(--transition-1);
+}
+
+.share:is(:hover, :focus) { border-color: var(--orange); }
+
+.card-time-wrapper {
+  top: 2%;
+  right: 5%;
+  font-family: var(--ff-oswald);
+  font-size: var(--fs-9);
+  font-weight: var(--fw-500);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-time-wrapper ion-icon {
+  font-size: 16px;
+  --ionicon-stroke-width: 50px;
+}
+
+.gears .card-content {
+  color: var(--white);
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.gears-card :is(.card-title, .card-prize) {
+  font-family: var(--ff-oswald);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-700);
+}
+
+.gears-card .card-title { margin-bottom: 5px; }
+
+.gears-card .card-subtitle {
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+}
+
+.gears .card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.gears-card .btn { padding: 18px 20px; }
+
+.gears-card .btn-primary {
+  font-size: var(--fs-7);
+  padding-block: 15px;
+}
+
+.gears-card .btn-primary ion-icon {
+  font-size: 20px;
+  --ionicon-stroke-width: 80px;
+}
+
+.gears-card .card-btn {
+  --polygon-1: polygon(75% 0, 100% 25%, 100% 100%, 25% 100%, 0 75%, 0 0);
+
+  background: var(--raisin-black-1);
+  color: var(--orange);
+}
+
+.gears-card .card-btn ion-icon { --ionicon-stroke-width: 50px; }
+
+.gears-card .card-btn:is(:hover, :focus) {
+  background: var(--orange);
+  color: var(--white);
+}
+
+#link{
+  color: white;
+
+}  
